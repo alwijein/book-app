@@ -10,7 +10,7 @@ class BookController extends Controller
     public function index()
     {
         $books = MidTest::all();
-        return view('agenda_publik', compact('books'));
+        return view('index', compact('books'));
     }
 
     public function tambahBuku(Request $request)

@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+    {{-- Start Header --}}
+
     <div class="container-fluid">
         <div class="page-header min-height-300 border-radius-xl mt-4"
             style="background-image: url({{ asset('assets/img/curved-images/curved0.jpg') }}); background-position-y: 50%;">
@@ -16,7 +18,7 @@
                 <div class="col-auto my-auto">
                     <div class="h-100">
                         <h5 class="mb-1">
-                            Alwi Jein
+                            Fira
                         </h5>
                         <p class="mb-0 font-weight-bold text-sm">
                             13020180227
@@ -36,48 +38,51 @@
                     </div>
                 </div>
             </div>
-
         </div>
+
+        {{-- End Header --}}
+
 
         {{-- Form inputan buku --}}
 
-<div class="mb-5">
+        <div class="mb-5">
 
-        <label for="projectName" class="form-label mt-4">Kode_Buku</label>
-        <input type="text" class="form-control" id="kode_buku" name="kode_buku" placeholder="Masukkan kode buku"
-            value="{{ old('kode_buku') }}">
-
-
-        <label for="projectName" class="form-label mt-4">Nama_Buku</label>
-        <input type="text" class="form-control" id="nama_buku" name="nama_buku"
-            placeholder="Masukkan Nama Buku"value="{{ old('nama_buku') }}">
+            <label for="projectName" class="form-label mt-4">Kode_Buku</label>
+            <input type="text" class="form-control" id="kode_buku" name="kode_buku" placeholder="Masukkan kode buku"
+                value="{{ old('kode_buku') }}">
 
 
-        <div class="d-flex justify-content-end mt-4">
-            <button type="submit" name="button" class="btn bg-gradient-success m-0 ms-2" id="butsave">Simpan</button>
-            <button type="submit" name="button" class="btn bg-gradient-info m-0 ms-2" id="butEdit">Edit</button>
-            <button type="submit" name="button" class="btn bg-gradient-danger m-0 ms-2" id="butHapus">Hapus</button>
+            <label for="projectName" class="form-label mt-4">Nama_Buku</label>
+            <input type="text" class="form-control" id="nama_buku" name="nama_buku"
+                placeholder="Masukkan Nama Buku"value="{{ old('nama_buku') }}">
+
+
+            <div class="d-flex justify-content-end mt-4">
+                <button type="submit" name="button" class="btn bg-gradient-success m-0 ms-2"
+                    id="butsave">Simpan</button>
+                <button type="submit" name="button" class="btn bg-gradient-info m-0 ms-2" id="butEdit">edit</button>
+                <button type="submit" name="button" class="btn bg-gradient-danger m-0 ms-2" id="butHapus">Hapus</button>
+            </div>
         </div>
-    </div>
 
         {{-- end form inputan buku --}}
+
+        {{-- Start table --}}
 
         <div class="card mt-2">
             <div class="table-responsive">
                 <table class="table align-items-center mb-0">
                     <thead>
                         <tr>
+
                             <th class="text-uppercase text-secondary text-xxx font-weight-bolder opacity-7 ps-2">No
                             </th>
                             <th class="text-start text-uppercase text-secondary text-xxx font-weight-bolder opacity-7 ps-2">
                                 Kode_Buku
                             </th>
-                            {{-- <th class="text-start text-uppercase text-secondary text-xxx font-weight-bolder opacity-7 ps-2">Hari
-                            </th> --}}
                             <th class="text-start text-uppercase text-secondary text-xxx font-weight-bolder opacity-7 ps-2">
                                 Nama_Buku
                             </th>
-
                         </tr>
                     </thead>
                     <tbody>
