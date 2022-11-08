@@ -4,26 +4,34 @@
     {{-- Start Header --}}
 
     <div class="container-fluid">
-        {{-- Form inputan menu --}}
+        {{-- Form inputan no_hp --}}
 
         <div class="mb-5">
 
-            <label for="projectName" class="form-label mt-4">nama_pembeli</label>
-            <input type="text" class="form-control" id="nama_pembeli" name="nama_pembeli" placeholder="Masukkan nama pembeli"
-                value="{{ old('nama_pembeli') }}">
+            <label for="projectName" class="form-label mt-4">nama_pemesan</label>
+            <input type="text" class="form-control" id="nama_pemesan" name="nama_pemesan" placeholder="Masukkan nama pembeli"
+                value="{{ old('nama_pemesan') }}">
 
 
-            <label for="projectName" class="form-label mt-4">menu</label>
-            <input type="text" class="form-control" id="menu" name="menu"
-                placeholder="Masukkan menu"value="{{ old('menu') }}">
+            <label for="projectName" class="form-label mt-4">no_hp</label>
+            <input type="text" class="form-control" id="no_hp" name="no_hp"
+                placeholder="Masukkan no_hp"value="{{ old('no_hp') }}">
 
-                <label for="projectName" class="form-label mt-4">harga</label>
-            <input type="number" class="form-control" id="harga" name="harga"
-                placeholder="Masukkan harga"value="{{ old('harga') }}">
+                <label for="projectName" class="form-label mt-4">nama_kereta</label>
+            <input type="text" class="form-control" id="nama_kereta" name="nama_kereta"
+                placeholder="Masukkan nama_kereta"value="{{ old('nama_kereta') }}">
 
-                <label for="projectName" class="form-label mt-4">banyak</label>
-            <input type="number" class="form-control" id="banyak" name="banyak"
-                placeholder="Masukkan banyak"value="{{ old('banyak') }}">
+                <label for="projectName" class="form-label mt-4">stasiun_tujuan</label>
+            <input type="text" class="form-control" id="stasiun_tujuan" name="stasiun_tujuan"
+                placeholder="Masukkan stasiun_tujuan"value="{{ old('stasiun_tujuan') }}">
+
+                <label for="projectName" class="form-label mt-4">harga_tiket</label>
+            <input type="number" class="form-control" id="harga_tiket" name="harga_tiket"
+                placeholder="Masukkan harga_tiket"value="{{ old('harga_tiket') }}">
+
+                <label for="projectName" class="form-label mt-4">jumlah_tiket</label>
+            <input type="number" class="form-control" id="jumlah_tiket" name="jumlah_tiket"
+                placeholder="Masukkan jumlah_tiket"value="{{ old('jumlah_tiket') }}">
 
 
             <div class="d-flex justify-content-end mt-4">
@@ -34,7 +42,7 @@
             </div>
         </div>
 
-        {{-- end form inputan menu --}}
+        {{-- end form inputan no_hp --}}
     @endsection
 
     @section('additional-script')
@@ -47,20 +55,24 @@
                 });
 
                 $('#butsave').on('click', function() {
-                    var nama_pembeli = $('#nama_pembeli').val();
-                    var menu = $('#menu').val();
-                    var harga = $('#harga').val();
-                    var banyak = $('#banyak').val();
+                    var nama_pemesan = $('#nama_pemesan').val();
+                    var no_hp = $('#no_hp').val();
+                    var nama_kereta = $('#nama_kereta').val();
+                    var stasiun_tujuan = $('#stasiun_tujuan').val();
+                    var harga_tiket = $('#harga_tiket').val();
+                    var jumlah_tiket = $('#jumlah_tiket').val();
                     var url = "{{ url('/tambah-buku') }}";
-                    if (nama_pembeli != "" && menu != "" && banyak != "") {
+                    if (nama_pemesan != "" && no_hp != "" && stasiun_tujuan != "") {
                         $.ajax({
                             url: url,
                             type: "POST",
                             data: {
-                                nama_pembeli: nama_pembeli,
-                                menu: menu,
-                                harga: harga,
-                                banyak: banyak,
+                                nama_pemesan: nama_pemesan,
+                                no_hp: no_hp,
+                                nama_kereta: nama_kereta,
+                                stasiun_tujuan: stasiun_tujuan,
+                                harga_tiket: harga_tiket,
+                                jumlah_tiket: jumlah_tiket,
                             },
                             cache: false,
                             success: function(dataResult) {
@@ -80,20 +92,24 @@
                 });
 
                 $('#butHapus').on('click', function() {
-                    var nama_pembeli = $('#nama_pembeli').val();
-                    var menu = $('#menu').val();
-                    var harga = $('#harga').val();
-                    var banyak = $('#banyak').val();
+                    var nama_pemesan = $('#nama_pemesan').val();
+                    var no_hp = $('#no_hp').val();
+                    var nama_kereta = $('#nama_kereta').val();
+                    var stasiun_tujuan = $('#stasiun_tujuan').val();
+                    var harga_tiket = $('#harga_tiket').val();
+                    var jumlah_tiket = $('#jumlah_tiket').val();
                     var url = "{{ url('/hapus-buku') }}";
-                    if (nama_pembeli != "" && menu != "") {
+                    if (nama_pemesan != "" && no_hp != "") {
                         $.ajax({
                             url: url,
                             type: "DELETE",
                             data: {
-                                nama_pembeli: nama_pembeli,
-                                menu: menu,
-                                harga: harga,
-                                banyak:    banyak,
+                                nama_pemesan: nama_pemesan,
+                                no_hp: no_hp,
+                                nama_kereta: nama_kereta,
+                                stasiun_tujuan:    stasiun_tujuan,
+                                harga_tiket: harga_tiket,
+                                jumlah_tiket: jumlah_tiket,
                             },
                             cache: false,
                             success: function(dataResult) {
@@ -102,7 +118,7 @@
                                 if (dataResult.statusCode == 200) {
                                     window.location = "/show-table";
                                 } else if (dataResult.statusCode == 201) {
-                                    alert("Masukkan nama_pembeli dan menu Dengan Benar");
+                                    alert("Masukkan nama_pemesan dan no_hp Dengan Benar");
                                 }
                             }
                         });
@@ -112,20 +128,24 @@
                 });
 
                 $('#butEdit').on('click', function() {
-                    var nama_pembeli = $('#nama_pembeli').val();
-                    var menu = $('#menu').val();
-                    var harga = $('#harga').val();
-                    var banyak = $('#banyak').val();
+                    var nama_pemesan = $('#nama_pemesan').val();
+                    var no_hp = $('#no_hp').val();
+                    var nama_kereta = $('#nama_kereta').val();
+                    var stasiun_tujuan = $('#stasiun_tujuan').val();
+                    var harga_tiket = $('#harga_tiket').val();
+                    var jumlah_tiket = $('#jumlah_tiket').val();
                     var url = "{{ url('/edit-buku') }}";
-                    if (nama_pembeli != "" && menu != "") {
+                    if (nama_pemesan != "" && no_hp != "") {
                         $.ajax({
                             url: url,
                             type: "POST",
                             data: {
-                                nama_pembeli: nama_pembeli,
-                                menu: menu,
-                                harga: harga,
-                                banyak: banyak,
+                                nama_pemesan: nama_pemesan,
+                                no_hp: no_hp,
+                                nama_kereta: nama_kereta,
+                                stasiun_tujuan: stasiun_tujuan,
+                                harga_tiket: harga_tiket,
+                                jumlah_tiket: jumlah_tiket,
                             },
                             cache: false,
                             success: function(dataResult) {
@@ -134,7 +154,7 @@
                                 if (dataResult.statusCode == 200) {
                                     window.location = "/show-table";
                                 } else if (dataResult.statusCode == 201) {
-                                    alert("Masukkan nama_pembeli Dengan Benar");
+                                    alert("Masukkan nama_pemesan Dengan Benar");
                                 }
                             }
                         });

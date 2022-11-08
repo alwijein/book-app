@@ -33,17 +33,23 @@ class BookController extends Controller
     {
         if ($request->ajax()) {
             $request->validate([
-                'nama_pembeli' => 'required',
-                'menu' => 'required',
-                'harga' => 'required',
-                'banyak' => 'required',
+                'nama_pemesan' => 'required',
+                'no_hp' => 'required',
+                'nama_kereta' => 'required',
+                'stasiun_tujuan' => 'required',
+                'harga_tiket' => 'required',
+                'jumlah_tiket' => 'required',
             ]);
 
             MidTest::create([
-                'nama_pembeli' => $request->nama_pembeli,
-                'menu' => $request->menu,
-                'harga' => $request->harga,
-                'banyak' => $request->banyak,
+                'nama_pemesan' => $request->nama_pemesan,
+                'no_hp' => $request->no_hp,
+                'nama_kereta' => $request->nama_kereta,
+                'stasiun_tujuan' => $request->stasiun_tujuan,
+                'stasiun_tujuan' => $request->stasiun_tujuan,
+                'harga_tiket' => $request->harga_tiket,
+                'harga_tiket' => $request->harga_tiket,
+                'jumlah_tiket' => $request->jumlah_tiket,
             ]);
 
             return json_encode(array(
@@ -56,14 +62,16 @@ class BookController extends Controller
     {
         if ($request->ajax()) {
             $request->validate([
-                'nama_pembeli' => 'required',
-                'menu' => 'required',
-                'harga' => 'required',
-                'banyak' => 'required',
+                'nama_pemesan' => 'required',
+                'no_hp' => 'required',
+                'nama_kereta' => 'required',
+                'stasiun_tujuan' => 'required',
+                'harga_tiket' => 'required',
+                'jumlah_tiket' => 'required',
 
             ]);
 
-            $data = MidTest::where('nama_pembeli', $request->nama_pembeli)->delete();
+            $data = MidTest::where('nama_pemesan', $request->nama_pemesan)->delete();
 
             if ($data == null) {
 
@@ -83,17 +91,23 @@ class BookController extends Controller
     {
         if ($request->ajax()) {
             $request->validate([
-                'nama_pembeli' => 'required',
-                'menu' => 'required',
-                'harga' => 'required',
-                'banyak' => 'required',
+                'nama_pemesan' => 'required',
+                'no_hp' => 'required',
+                'nama_kereta' => 'required',
+                'stasiun_tujuan' => 'required',
+                'harga_tiket' => 'required',
+                'jumlah_tiket' => 'required',
             ]);
 
-            $data = MidTest::where('nama_pembeli', $request->nama_pembeli)->update([
-                'nama_pembeli' => $request->nama_pembeli,
-                'menu' => $request->menu,
-                'harga' => $request->harga,
-                'banyak' => $request->banyak,
+            $data = MidTest::where('nama_pemesan', $request->nama_pemesan)->update([
+                'nama_pemesan' => $request->nama_pemesan,
+                'no_hp' => $request->no_hp,
+                'nama_kereta' => $request->nama_kereta,
+                'stasiun_tujuan' => $request->stasiun_tujuan,
+                'stasiun_tujuan' => $request->stasiun_tujuan,
+                'harga_tiket' => $request->harga_tiket,
+                'harga_tiket' => $request->harga_tiket,
+                'jumlah_tiket' => $request->jumlah_tiket,
             ]);
 
             if ($data == null) {
