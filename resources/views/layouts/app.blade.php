@@ -39,9 +39,9 @@
         <div class="sidenav-header">
             <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
                 aria-hidden="true" id="iconSidenav"></i>
-            <a class="navbar-brand m-0" href="/">
+            <a class="navbar-brand m-0" href="/dashboard">
                 <img src={{ asset('assets/img/logo.png') }} class="navbar-brand-img h-100" alt="main_logo">
-                <span class="ms-1 font-weight-bold">Pallubasa</span>
+                <span class="ms-1 font-weight-bold">Turnament PUBG</span>
             </a>
         </div>
         <hr class="horizontal dark mt-0">
@@ -75,7 +75,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <span class="nav-link-text ms-1">Menu</span>
+                        <span class="nav-link-text ms-1">Daftar TIM</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -103,7 +103,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <span class="nav-link-text ms-1">Tugas MID</span>
+                        <span class="nav-link-text ms-1">MID TEST</span>
                     </a>
                 </li>
             </ul>

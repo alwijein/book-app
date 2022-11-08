@@ -69,8 +69,8 @@
                                             src={{ asset('assets/img/illustrations/login.png') }} alt="chat-img">
                                     </div>
                                 </a>
-                                <h4 class="mt-5 text-white font-weight-bolder">"Pallubasa"</h4>
-                                <p class="text-white">Website untuk mengatur penjualan palluabasa</p>
+                                <h4 class="mt-5 text-white font-weight-bolder">"Turnament"</h4>
+                                <p class="text-white">Aplikasi turnamen untuk pertadingan game PUBG</p>
                             </div>
                         </div>
                     </div>

@@ -15,10 +15,10 @@ class CreateMidTestTable extends Migration
     {
         Schema::create('mid_test', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_menu');
-            $table->bigInteger('harga_menu');
-            $table->bigInteger('banyak');
-            $table->bigInteger('total');
+            $table->string('user_id');
+            $table->string('team_name');
+            $table->string('player_id');
+            $table->string('player_fullname');
             $table->timestamps();
         });
     }

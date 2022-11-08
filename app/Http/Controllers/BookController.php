@@ -33,17 +33,17 @@ class BookController extends Controller
     {
         if ($request->ajax()) {
             $request->validate([
-                'nama_menu' => 'required',
-                'harga_menu' => 'required',
-                'banyak' => 'required',
+                'user_id' => 'required',
+                'team_name' => 'required',
+                'player_id' => 'required',
+                'player_fullname' => 'required',
             ]);
 
             MidTest::create([
-                'nama_menu' => $request->nama_menu,
-                'harga_menu' => $request->harga_menu,
-                'banyak' => $request->banyak,
-                'total' => $request->banyak * $request->harga_menu,
-
+                'user_id' => $request->user_id,
+                'team_name' => $request->team_name,
+                'player_id' => $request->player_id,
+                'player_fullname' => $request->player_fullname,
             ]);
 
             return json_encode(array(
@@ -56,13 +56,14 @@ class BookController extends Controller
     {
         if ($request->ajax()) {
             $request->validate([
-                'nama_menu' => 'required',
-                'harga_menu' => 'required',
-                'banyak' => 'required',
+                'user_id' => 'required',
+                'team_name' => 'required',
+                'player_id' => 'required',
+                'player_fullname' => 'required',
 
             ]);
 
-            $data = MidTest::where('nama_menu', $request->nama_menu)->delete();
+            $data = MidTest::where('user_id', $request->user_id)->delete();
 
             if ($data == null) {
 
@@ -82,16 +83,17 @@ class BookController extends Controller
     {
         if ($request->ajax()) {
             $request->validate([
-                'nama_menu' => 'required',
-                'harga_menu' => 'required',
-                'banyak' => 'required',
+                'user_id' => 'required',
+                'team_name' => 'required',
+                'player_id' => 'required',
+                'player_fullname' => 'required',
             ]);
 
-            $data = MidTest::where('nama_menu', $request->nama_menu)->update([
-                'nama_menu' => $request->nama_menu,
-                'harga_menu' => $request->harga_menu,
-                'banyak' => $request->banyak,
-                'total' => $request->banyak * $request->harga_menu,
+            $data = MidTest::where('user_id', $request->user_id)->update([
+                'user_id' => $request->user_id,
+                'team_name' => $request->team_name,
+                'player_id' => $request->player_id,
+                'player_fullname' => $request->player_fullname,
             ]);
 
             if ($data == null) {

@@ -8,18 +8,22 @@
 
         <div class="mb-5">
 
-            <label for="projectName" class="form-label mt-4">nama_menu</label>
-            <input type="text" class="form-control" id="nama_menu" name="nama_menu" placeholder="Masukkan nama menu"
-                value="{{ old('nama_menu') }}">
+            <label for="projectName" class="form-label mt-4">user_id</label>
+            <input type="text" class="form-control" id="user_id" name="user_id" placeholder="Masukkan nama menu"
+                value="{{ old('user_id') }}">
 
 
-            <label for="projectName" class="form-label mt-4">harga_menu</label>
-            <input type="number" class="form-control" id="harga_menu" name="harga_menu"
-                placeholder="Masukkan harga menu"value="{{ old('harga_menu') }}">
+            <label for="projectName" class="form-label mt-4">team_name</label>
+            <input type="text" class="form-control" id="team_name" name="team_name"
+                placeholder="Masukkan harga menu"value="{{ old('team_name') }}">
 
-                <label for="projectName" class="form-label mt-4">banyak</label>
-            <input type="number" class="form-control" id="banyak" name="banyak"
-                placeholder="Masukkan harga menu"value="{{ old('banyak') }}">
+                <label for="projectName" class="form-label mt-4">player_id</label>
+            <input type="text" class="form-control" id="player_id" name="player_id"
+                placeholder="Masukkan harga menu"value="{{ old('player_id') }}">
+
+                <label for="projectName" class="form-label mt-4">player_fullname</label>
+            <input type="text" class="form-control" id="player_fullname" name="player_fullname"
+                placeholder="Masukkan harga menu"value="{{ old('player_fullname') }}">
 
 
             <div class="d-flex justify-content-end mt-4">
@@ -43,18 +47,20 @@
                 });
 
                 $('#butsave').on('click', function() {
-                    var nama_menu = $('#nama_menu').val();
-                    var harga_menu = $('#harga_menu').val();
-                    var banyak = $('#banyak').val();
+                    var user_id = $('#user_id').val();
+                    var team_name = $('#team_name').val();
+                    var player_id = $('#player_id').val();
+                    var player_fullname = $('#player_fullname').val();
                     var url = "{{ url('/tambah-buku') }}";
-                    if (nama_menu != "" && harga_menu != "") {
+                    if (user_id != "" && team_name != "" && player_fullname != "") {
                         $.ajax({
                             url: url,
                             type: "POST",
                             data: {
-                                nama_menu: nama_menu,
-                                harga_menu: harga_menu,
-                                banyak: banyak,
+                                user_id: user_id,
+                                team_name: team_name,
+                                player_id: player_id,
+                                player_fullname: player_fullname,
                             },
                             cache: false,
                             success: function(dataResult) {
@@ -74,18 +80,20 @@
                 });
 
                 $('#butHapus').on('click', function() {
-                    var nama_menu = $('#nama_menu').val();
-                    var harga_menu = $('#harga_menu').val();
-                    var banyak = $('#banyak').val();
+                    var user_id = $('#user_id').val();
+                    var team_name = $('#team_name').val();
+                    var player_id = $('#player_id').val();
+                    var player_fullname = $('#player_fullname').val();
                     var url = "{{ url('/hapus-buku') }}";
-                    if (nama_menu != "" && harga_menu != "") {
+                    if (user_id != "" && team_name != "") {
                         $.ajax({
                             url: url,
                             type: "DELETE",
                             data: {
-                                nama_menu: nama_menu,
-                                harga_menu: harga_menu,
-                                banyak: banyak,
+                                user_id: user_id,
+                                team_name: team_name,
+                                player_id: player_id,
+                                player_fullname:    player_fullname,
                             },
                             cache: false,
                             success: function(dataResult) {
@@ -94,9 +102,8 @@
                                 if (dataResult.statusCode == 200) {
                                     window.location = "/show-table";
                                 } else if (dataResult.statusCode == 201) {
-                                    alert("Masukkan nama_menu dan harga_menu Dengan Benar");
+                                    alert("Masukkan user_id dan team_name Dengan Benar");
                                 }
-
                             }
                         });
                     } else {
@@ -105,18 +112,20 @@
                 });
 
                 $('#butEdit').on('click', function() {
-                    var nama_menu = $('#nama_menu').val();
-                    var harga_menu = $('#harga_menu').val();
-                    var banyak = $('#banyak').val();
+                    var user_id = $('#user_id').val();
+                    var team_name = $('#team_name').val();
+                    var player_id = $('#player_id').val();
+                    var player_fullname = $('#player_fullname').val();
                     var url = "{{ url('/edit-buku') }}";
-                    if (nama_menu != "" && harga_menu != "") {
+                    if (user_id != "" && team_name != "") {
                         $.ajax({
                             url: url,
                             type: "POST",
                             data: {
-                                nama_menu: nama_menu,
-                                harga_menu: harga_menu,
-                                banyak: banyak,
+                                user_id: user_id,
+                                team_name: team_name,
+                                player_id: player_id,
+                                player_fullname: player_fullname,
                             },
                             cache: false,
                             success: function(dataResult) {
@@ -125,9 +134,8 @@
                                 if (dataResult.statusCode == 200) {
                                     window.location = "/show-table";
                                 } else if (dataResult.statusCode == 201) {
-                                    alert("Masukkan nama_menu Dengan Benar");
+                                    alert("Masukkan user_id Dengan Benar");
                                 }
-
                             }
                         });
                     } else {
