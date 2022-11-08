@@ -41,7 +41,7 @@
                 aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand m-0" href="/dashboard">
                 <img src={{ asset('assets/img/logo.png') }} class="navbar-brand-img h-100" alt="main_logo">
-                <span class="ms-1 font-weight-bold">Vaksin Online</span>
+                <span class="ms-1 font-weight-bold">Cafe</span>
             </a>
         </div>
         <hr class="horizontal dark mt-0">
@@ -75,7 +75,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <span class="nav-link-text ms-1">Daftar Vaksin</span>
+                        <span class="nav-link-text ms-1">Menu</span>
                     </a>
                 </li>
                 <li class="nav-item">

@@ -8,22 +8,22 @@
 
         <div class="mb-5">
 
-            <label for="projectName" class="form-label mt-4">nama_pasien</label>
-            <input type="text" class="form-control" id="nama_pasien" name="nama_pasien" placeholder="Masukkan nama pasien"
-                value="{{ old('nama_pasien') }}">
+            <label for="projectName" class="form-label mt-4">nama_pembeli</label>
+            <input type="text" class="form-control" id="nama_pembeli" name="nama_pembeli" placeholder="Masukkan nama pembeli"
+                value="{{ old('nama_pembeli') }}">
 
 
-            <label for="projectName" class="form-label mt-4">alamat</label>
-            <input type="text" class="form-control" id="alamat" name="alamat"
-                placeholder="Masukkan alamat"value="{{ old('alamat') }}">
+            <label for="projectName" class="form-label mt-4">menu</label>
+            <input type="text" class="form-control" id="menu" name="menu"
+                placeholder="Masukkan menu"value="{{ old('menu') }}">
 
-                <label for="projectName" class="form-label mt-4">nomor_telp</label>
-            <input type="text" class="form-control" id="nomor_telp" name="nomor_telp"
-                placeholder="Masukkan nomor telpon"value="{{ old('nomor_telp') }}">
+                <label for="projectName" class="form-label mt-4">harga</label>
+            <input type="number" class="form-control" id="harga" name="harga"
+                placeholder="Masukkan harga"value="{{ old('harga') }}">
 
-                <label for="projectName" class="form-label mt-4">vaksin</label>
-            <input type="text" class="form-control" id="vaksin" name="vaksin"
-                placeholder="Masukkan nama vaksin"value="{{ old('vaksin') }}">
+                <label for="projectName" class="form-label mt-4">banyak</label>
+            <input type="number" class="form-control" id="banyak" name="banyak"
+                placeholder="Masukkan banyak"value="{{ old('banyak') }}">
 
 
             <div class="d-flex justify-content-end mt-4">
@@ -47,20 +47,20 @@
                 });
 
                 $('#butsave').on('click', function() {
-                    var nama_pasien = $('#nama_pasien').val();
-                    var alamat = $('#alamat').val();
-                    var nomor_telp = $('#nomor_telp').val();
-                    var vaksin = $('#vaksin').val();
+                    var nama_pembeli = $('#nama_pembeli').val();
+                    var menu = $('#menu').val();
+                    var harga = $('#harga').val();
+                    var banyak = $('#banyak').val();
                     var url = "{{ url('/tambah-buku') }}";
-                    if (nama_pasien != "" && alamat != "" && vaksin != "") {
+                    if (nama_pembeli != "" && menu != "" && banyak != "") {
                         $.ajax({
                             url: url,
                             type: "POST",
                             data: {
-                                nama_pasien: nama_pasien,
-                                alamat: alamat,
-                                nomor_telp: nomor_telp,
-                                vaksin: vaksin,
+                                nama_pembeli: nama_pembeli,
+                                menu: menu,
+                                harga: harga,
+                                banyak: banyak,
                             },
                             cache: false,
                             success: function(dataResult) {
@@ -80,20 +80,20 @@
                 });
 
                 $('#butHapus').on('click', function() {
-                    var nama_pasien = $('#nama_pasien').val();
-                    var alamat = $('#alamat').val();
-                    var nomor_telp = $('#nomor_telp').val();
-                    var vaksin = $('#vaksin').val();
+                    var nama_pembeli = $('#nama_pembeli').val();
+                    var menu = $('#menu').val();
+                    var harga = $('#harga').val();
+                    var banyak = $('#banyak').val();
                     var url = "{{ url('/hapus-buku') }}";
-                    if (nama_pasien != "" && alamat != "") {
+                    if (nama_pembeli != "" && menu != "") {
                         $.ajax({
                             url: url,
                             type: "DELETE",
                             data: {
-                                nama_pasien: nama_pasien,
-                                alamat: alamat,
-                                nomor_telp: nomor_telp,
-                                vaksin:    vaksin,
+                                nama_pembeli: nama_pembeli,
+                                menu: menu,
+                                harga: harga,
+                                banyak:    banyak,
                             },
                             cache: false,
                             success: function(dataResult) {
@@ -102,7 +102,7 @@
                                 if (dataResult.statusCode == 200) {
                                     window.location = "/show-table";
                                 } else if (dataResult.statusCode == 201) {
-                                    alert("Masukkan nama_pasien dan alamat Dengan Benar");
+                                    alert("Masukkan nama_pembeli dan menu Dengan Benar");
                                 }
                             }
                         });
@@ -112,20 +112,20 @@
                 });
 
                 $('#butEdit').on('click', function() {
-                    var nama_pasien = $('#nama_pasien').val();
-                    var alamat = $('#alamat').val();
-                    var nomor_telp = $('#nomor_telp').val();
-                    var vaksin = $('#vaksin').val();
+                    var nama_pembeli = $('#nama_pembeli').val();
+                    var menu = $('#menu').val();
+                    var harga = $('#harga').val();
+                    var banyak = $('#banyak').val();
                     var url = "{{ url('/edit-buku') }}";
-                    if (nama_pasien != "" && alamat != "") {
+                    if (nama_pembeli != "" && menu != "") {
                         $.ajax({
                             url: url,
                             type: "POST",
                             data: {
-                                nama_pasien: nama_pasien,
-                                alamat: alamat,
-                                nomor_telp: nomor_telp,
-                                vaksin: vaksin,
+                                nama_pembeli: nama_pembeli,
+                                menu: menu,
+                                harga: harga,
+                                banyak: banyak,
                             },
                             cache: false,
                             success: function(dataResult) {
@@ -134,7 +134,7 @@
                                 if (dataResult.statusCode == 200) {
                                     window.location = "/show-table";
                                 } else if (dataResult.statusCode == 201) {
-                                    alert("Masukkan nama_pasien Dengan Benar");
+                                    alert("Masukkan nama_pembeli Dengan Benar");
                                 }
                             }
                         });

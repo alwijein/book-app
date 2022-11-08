@@ -12,16 +12,16 @@
                         <th class="text-uppercase text-secondary text-xxx font-weight-bolder opacity-7 ps-2">No
                         </th>
                         <th class="text-start text-uppercase text-secondary text-xxx font-weight-bolder opacity-7 ps-2">
-                            nama_pasien
+                            nama_pembeli
                         </th>
                         <th class="text-start text-uppercase text-secondary text-xxx font-weight-bolder opacity-7 ps-2">
-                            alamat
+                            menu
                         </th>
                         <th class="text-start text-uppercase text-secondary text-xxx font-weight-bolder opacity-7 ps-2">
-                            nomor_telp
+                            harga
                         </th>
                         <th class="text-start text-uppercase text-secondary text-xxx font-weight-bolder opacity-7 ps-2">
-                            vaksin
+                            banyak
                         </th>
                     </tr>
                 </thead>
@@ -33,17 +33,17 @@
                             </td>
 
                             <td class="align-middle text-start text-md">
-                                <p class="text-md text-wrap font-weight-bold mb-0">{{ $menu->nama_pasien }}</p>
+                                <p class="text-md text-wrap font-weight-bold mb-0">{{ $menu->nama_pembeli }}</p>
                             </td>
 
                             <td class="align-middle text-start text-md">
-                                <p class="text-md text-wrap font-weight-bold mb-0">{{ $menu->alamat }}</p>
+                                <p class="text-md text-wrap font-weight-bold mb-0">{{ $menu->menu }}</p>
                             </td>
                             <td class="align-middle text-start text-md">
-                                <p class="text-md text-wrap font-weight-bold mb-0">{{ $menu->nomor_telp }}</p>
+                                <p class="text-md text-wrap font-weight-bold mb-0">{{ $menu->harga }}</p>
                             </td>
                             <td class="align-middle text-start text-md">
-                                <p class="text-md text-wrap font-weight-bold mb-0">{{ $menu->vaksin}}</p>
+                                <p class="text-md text-wrap font-weight-bold mb-0">{{ $menu->banyak}}</p>
                             </td>
                         </tr>
                     @endforeach

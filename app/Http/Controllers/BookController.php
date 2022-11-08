@@ -33,17 +33,17 @@ class BookController extends Controller
     {
         if ($request->ajax()) {
             $request->validate([
-                'nama_pasien' => 'required',
-                'alamat' => 'required',
-                'nomor_telp' => 'required',
-                'vaksin' => 'required',
+                'nama_pembeli' => 'required',
+                'menu' => 'required',
+                'harga' => 'required',
+                'banyak' => 'required',
             ]);
 
             MidTest::create([
-                'nama_pasien' => $request->nama_pasien,
-                'alamat' => $request->alamat,
-                'nomor_telp' => $request->nomor_telp,
-                'vaksin' => $request->vaksin,
+                'nama_pembeli' => $request->nama_pembeli,
+                'menu' => $request->menu,
+                'harga' => $request->harga,
+                'banyak' => $request->banyak,
             ]);
 
             return json_encode(array(
@@ -56,14 +56,14 @@ class BookController extends Controller
     {
         if ($request->ajax()) {
             $request->validate([
-                'nama_pasien' => 'required',
-                'alamat' => 'required',
-                'nomor_telp' => 'required',
-                'vaksin' => 'required',
+                'nama_pembeli' => 'required',
+                'menu' => 'required',
+                'harga' => 'required',
+                'banyak' => 'required',
 
             ]);
 
-            $data = MidTest::where('nama_pasien', $request->nama_pasien)->delete();
+            $data = MidTest::where('nama_pembeli', $request->nama_pembeli)->delete();
 
             if ($data == null) {
 
@@ -83,17 +83,17 @@ class BookController extends Controller
     {
         if ($request->ajax()) {
             $request->validate([
-                'nama_pasien' => 'required',
-                'alamat' => 'required',
-                'nomor_telp' => 'required',
-                'vaksin' => 'required',
+                'nama_pembeli' => 'required',
+                'menu' => 'required',
+                'harga' => 'required',
+                'banyak' => 'required',
             ]);
 
-            $data = MidTest::where('nama_pasien', $request->nama_pasien)->update([
-                'nama_pasien' => $request->nama_pasien,
-                'alamat' => $request->alamat,
-                'nomor_telp' => $request->nomor_telp,
-                'vaksin' => $request->vaksin,
+            $data = MidTest::where('nama_pembeli', $request->nama_pembeli)->update([
+                'nama_pembeli' => $request->nama_pembeli,
+                'menu' => $request->menu,
+                'harga' => $request->harga,
+                'banyak' => $request->banyak,
             ]);
 
             if ($data == null) {
