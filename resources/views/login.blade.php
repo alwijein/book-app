@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href={{ asset('assets/img/apple-icon.png') }}>
     <link rel="icon" type="image/png" href={{ asset('assets/img/favicon.png') }}>
     <title>
-        Tugas MID Alfira
+        Tugas MID Huriyah
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -69,8 +69,8 @@
                                             src={{ asset('assets/img/illustrations/login.png') }} alt="chat-img">
                                     </div>
                                 </a>
-                                <h4 class="mt-5 text-white font-weight-bolder">"Pallubasa"</h4>
-                                <p class="text-white">Website untuk mengatur penjualan palluabasa</p>
+                                <h4 class="mt-5 text-white font-weight-bolder">"KOST"</h4>
+                                <p class="text-white">Website untuk membantu orang-orang menemukan kost terbaik</p>
                             </div>
                         </div>
                     </div>

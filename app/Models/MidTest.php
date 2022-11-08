@@ -11,5 +11,5 @@ class MidTest extends Model
 
     protected $table = 'mid_test';
 
-    protected $fillable = ['nama_menu', 'harga_menu', 'banyak', 'total'];
+    protected $fillable = ['nama_pengguna', 'no_hp', 'no_kamar', 'lokasi'];
 }
