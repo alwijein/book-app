@@ -14,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [BookController::class, 'index']);
+Route::get('/', [BookController::class, 'login']);
+Route::get('/dashboard', [BookController::class, 'index'])->name('dashboard');
+Route::get('/show-table', [BookController::class, 'showTable'])->name('show-table');
+Route::get('/show-menu', [BookController::class, 'showMenu'])->name('show-menu');
 
 Route::post('/tambah-buku', [BookController::class, 'tambahBuku']);
 Route::delete('/hapus-buku', [BookController::class, 'hapusBuku']);
