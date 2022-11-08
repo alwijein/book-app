@@ -33,17 +33,17 @@ class BookController extends Controller
     {
         if ($request->ajax()) {
             $request->validate([
-                'user_id' => 'required',
-                'team_name' => 'required',
-                'player_id' => 'required',
-                'player_fullname' => 'required',
+                'nama_pasien' => 'required',
+                'alamat' => 'required',
+                'nomor_telp' => 'required',
+                'vaksin' => 'required',
             ]);
 
             MidTest::create([
-                'user_id' => $request->user_id,
-                'team_name' => $request->team_name,
-                'player_id' => $request->player_id,
-                'player_fullname' => $request->player_fullname,
+                'nama_pasien' => $request->nama_pasien,
+                'alamat' => $request->alamat,
+                'nomor_telp' => $request->nomor_telp,
+                'vaksin' => $request->vaksin,
             ]);
 
             return json_encode(array(
@@ -56,14 +56,14 @@ class BookController extends Controller
     {
         if ($request->ajax()) {
             $request->validate([
-                'user_id' => 'required',
-                'team_name' => 'required',
-                'player_id' => 'required',
-                'player_fullname' => 'required',
+                'nama_pasien' => 'required',
+                'alamat' => 'required',
+                'nomor_telp' => 'required',
+                'vaksin' => 'required',
 
             ]);
 
-            $data = MidTest::where('user_id', $request->user_id)->delete();
+            $data = MidTest::where('nama_pasien', $request->nama_pasien)->delete();
 
             if ($data == null) {
 
@@ -83,17 +83,17 @@ class BookController extends Controller
     {
         if ($request->ajax()) {
             $request->validate([
-                'user_id' => 'required',
-                'team_name' => 'required',
-                'player_id' => 'required',
-                'player_fullname' => 'required',
+                'nama_pasien' => 'required',
+                'alamat' => 'required',
+                'nomor_telp' => 'required',
+                'vaksin' => 'required',
             ]);
 
-            $data = MidTest::where('user_id', $request->user_id)->update([
-                'user_id' => $request->user_id,
-                'team_name' => $request->team_name,
-                'player_id' => $request->player_id,
-                'player_fullname' => $request->player_fullname,
+            $data = MidTest::where('nama_pasien', $request->nama_pasien)->update([
+                'nama_pasien' => $request->nama_pasien,
+                'alamat' => $request->alamat,
+                'nomor_telp' => $request->nomor_telp,
+                'vaksin' => $request->vaksin,
             ]);
 
             if ($data == null) {

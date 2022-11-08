@@ -18,10 +18,10 @@
                 <div class="col-auto my-auto">
                     <div class="h-100">
                         <h5 class="mb-1">
-                            Jansel Angga
+                            Restiyani
                         </h5>
                         <p class="mb-0 font-weight-bold text-sm">
-                            201055
+                            201082
                         </p>
                     </div>
                 </div>

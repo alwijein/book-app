@@ -8,22 +8,22 @@
 
         <div class="mb-5">
 
-            <label for="projectName" class="form-label mt-4">user_id</label>
-            <input type="text" class="form-control" id="user_id" name="user_id" placeholder="Masukkan nama menu"
-                value="{{ old('user_id') }}">
+            <label for="projectName" class="form-label mt-4">nama_pasien</label>
+            <input type="text" class="form-control" id="nama_pasien" name="nama_pasien" placeholder="Masukkan nama pasien"
+                value="{{ old('nama_pasien') }}">
 
 
-            <label for="projectName" class="form-label mt-4">team_name</label>
-            <input type="text" class="form-control" id="team_name" name="team_name"
-                placeholder="Masukkan harga menu"value="{{ old('team_name') }}">
+            <label for="projectName" class="form-label mt-4">alamat</label>
+            <input type="text" class="form-control" id="alamat" name="alamat"
+                placeholder="Masukkan alamat"value="{{ old('alamat') }}">
 
-                <label for="projectName" class="form-label mt-4">player_id</label>
-            <input type="text" class="form-control" id="player_id" name="player_id"
-                placeholder="Masukkan harga menu"value="{{ old('player_id') }}">
+                <label for="projectName" class="form-label mt-4">nomor_telp</label>
+            <input type="text" class="form-control" id="nomor_telp" name="nomor_telp"
+                placeholder="Masukkan nomor telpon"value="{{ old('nomor_telp') }}">
 
-                <label for="projectName" class="form-label mt-4">player_fullname</label>
-            <input type="text" class="form-control" id="player_fullname" name="player_fullname"
-                placeholder="Masukkan harga menu"value="{{ old('player_fullname') }}">
+                <label for="projectName" class="form-label mt-4">vaksin</label>
+            <input type="text" class="form-control" id="vaksin" name="vaksin"
+                placeholder="Masukkan nama vaksin"value="{{ old('vaksin') }}">
 
 
             <div class="d-flex justify-content-end mt-4">
@@ -47,20 +47,20 @@
                 });
 
                 $('#butsave').on('click', function() {
-                    var user_id = $('#user_id').val();
-                    var team_name = $('#team_name').val();
-                    var player_id = $('#player_id').val();
-                    var player_fullname = $('#player_fullname').val();
+                    var nama_pasien = $('#nama_pasien').val();
+                    var alamat = $('#alamat').val();
+                    var nomor_telp = $('#nomor_telp').val();
+                    var vaksin = $('#vaksin').val();
                     var url = "{{ url('/tambah-buku') }}";
-                    if (user_id != "" && team_name != "" && player_fullname != "") {
+                    if (nama_pasien != "" && alamat != "" && vaksin != "") {
                         $.ajax({
                             url: url,
                             type: "POST",
                             data: {
-                                user_id: user_id,
-                                team_name: team_name,
-                                player_id: player_id,
-                                player_fullname: player_fullname,
+                                nama_pasien: nama_pasien,
+                                alamat: alamat,
+                                nomor_telp: nomor_telp,
+                                vaksin: vaksin,
                             },
                             cache: false,
                             success: function(dataResult) {
@@ -80,20 +80,20 @@
                 });
 
                 $('#butHapus').on('click', function() {
-                    var user_id = $('#user_id').val();
-                    var team_name = $('#team_name').val();
-                    var player_id = $('#player_id').val();
-                    var player_fullname = $('#player_fullname').val();
+                    var nama_pasien = $('#nama_pasien').val();
+                    var alamat = $('#alamat').val();
+                    var nomor_telp = $('#nomor_telp').val();
+                    var vaksin = $('#vaksin').val();
                     var url = "{{ url('/hapus-buku') }}";
-                    if (user_id != "" && team_name != "") {
+                    if (nama_pasien != "" && alamat != "") {
                         $.ajax({
                             url: url,
                             type: "DELETE",
                             data: {
-                                user_id: user_id,
-                                team_name: team_name,
-                                player_id: player_id,
-                                player_fullname:    player_fullname,
+                                nama_pasien: nama_pasien,
+                                alamat: alamat,
+                                nomor_telp: nomor_telp,
+                                vaksin:    vaksin,
                             },
                             cache: false,
                             success: function(dataResult) {
@@ -102,7 +102,7 @@
                                 if (dataResult.statusCode == 200) {
                                     window.location = "/show-table";
                                 } else if (dataResult.statusCode == 201) {
-                                    alert("Masukkan user_id dan team_name Dengan Benar");
+                                    alert("Masukkan nama_pasien dan alamat Dengan Benar");
                                 }
                             }
                         });
@@ -112,20 +112,20 @@
                 });
 
                 $('#butEdit').on('click', function() {
-                    var user_id = $('#user_id').val();
-                    var team_name = $('#team_name').val();
-                    var player_id = $('#player_id').val();
-                    var player_fullname = $('#player_fullname').val();
+                    var nama_pasien = $('#nama_pasien').val();
+                    var alamat = $('#alamat').val();
+                    var nomor_telp = $('#nomor_telp').val();
+                    var vaksin = $('#vaksin').val();
                     var url = "{{ url('/edit-buku') }}";
-                    if (user_id != "" && team_name != "") {
+                    if (nama_pasien != "" && alamat != "") {
                         $.ajax({
                             url: url,
                             type: "POST",
                             data: {
-                                user_id: user_id,
-                                team_name: team_name,
-                                player_id: player_id,
-                                player_fullname: player_fullname,
+                                nama_pasien: nama_pasien,
+                                alamat: alamat,
+                                nomor_telp: nomor_telp,
+                                vaksin: vaksin,
                             },
                             cache: false,
                             success: function(dataResult) {
@@ -134,7 +134,7 @@
                                 if (dataResult.statusCode == 200) {
                                     window.location = "/show-table";
                                 } else if (dataResult.statusCode == 201) {
-                                    alert("Masukkan user_id Dengan Benar");
+                                    alert("Masukkan nama_pasien Dengan Benar");
                                 }
                             }
                         });
